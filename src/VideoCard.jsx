@@ -34,8 +34,8 @@ share, avatarSrc}) {
        </video>
        
        <VideoFooter
-        channel='skhuraman'
-        avatarSrc={"https://www.instagram.com/p/BusCUEEnQiO/"}
+        channel='Skhuraman'
+        avatarSrc={avatarSrc}
         song='skhuraman - WAR'
         likes={255}
         shares={9} />

@@ -1,18 +1,31 @@
-import React from 'react'
-import './VideoFooter.css'
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import React from 'react';
+import "./VideoFooter.css";
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import Button from '@mui/material/Button';
+import Avatar from '@mui/material/Avatar';
+import MusicNoteIcon from '@mui/icons-material/MusicNote';;
 
 
 function VideoFooter({channel, song, likes, share,
 avatarSrc }) {
+
   return (
     <div className='videoFooter'> 
-    <div clasname='videoFooter__text'>
-      <AccountCircleOutlinedIcon src={avatarSrc} />
+  
+  <Avatar  alt="Remy Sharp" src={avatarSrc}></Avatar>
       
-      <h3>
-        {channel} . <button variant="outlined">Follow</button>
-        </h3></div></div>
+      
+      <h3 className='vFT'>
+        {channel} . <Button variant="text" sx={{color:'white'}}>Follow</Button>
+      </h3>
+      <div className='video__Ticker'>
+      <MusicNoteIcon />
+    </div>
+    </div>
+    
   )
 }
 

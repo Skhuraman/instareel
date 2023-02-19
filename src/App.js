@@ -19,7 +19,7 @@ function App() {
       {/*app videos*/}
       <VideoCard 
       channel='skhuraman'
-      avatarSrc={"https://www.instagram.com/p/BusCUEEnQiO/"}
+      avatarSrc={"instareel/public/logo512.png"}
       song='skhuraman - WAR'
       url={'https://joy1.videvo.net/videvo_files/video/free/2019-11/large_watermarked/190301_1_25_11_preview.mp4'}
       likes={255}
