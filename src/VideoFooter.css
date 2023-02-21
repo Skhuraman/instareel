@@ -1,4 +1,9 @@
-.videoFooter {
+.videoFooter{
+    position: relative;
+    margin-left: 20px;
+    bottom: 100px;
+}
+.videoFooter__text {
     position: absolute;  
     justify-content: space-between;
     bottom: 0;
@@ -10,4 +15,48 @@
 .vFT {
     margin-left: 10px;
     padding-bottom: 20px;
+}
+.videoFooter__ticker > .ticker{
+    height: fit-content;
+    margin-left: 30px;
+    margin-bottom: 20%;
+    width: 60%;
+
+}
+
+.songText{
+    font-size: 11px;
+    color:white;
+    padding-top: 7px;
+}
+.videoFooter__icon {
+    position: absolute;
+    left: 5px;
+    color: white;
+}
+
+.videeFooter__actions {
+    display: flex;
+    position: absolute;
+    width: 95%;
+    color: white;
+    justify-content: space-between;
+}
+
+.videeFooter__actionsLeft > .MuiSvgIcon-root {
+    padding: 0 10px;
+}
+
+.videeFooter__actionsRight {
+    display: flex;
+}
+
+.videoFooter__stat {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.videoFooter__stat > p {
+    margin-left: 3px;
 }

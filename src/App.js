@@ -1,8 +1,18 @@
-import React from 'react';
+import ReactDOM from 'react-dom';
+import React, { useEffect,useState } from 'react';
 import './App.css';
 import VideoCard from './VideoCard';
+import db from './Firebase';
+
 
 function App() {
+  const [reels, setReels] = useState([]);
+
+  useEffect(() => {
+db.collection('reels').onSnapshot(snapshot => (
+ setReels(snapshot.docs.map(doc => doc.data()))
+))
+  }, [])
   return (
     <div className="App">
      <div className='app_top'>
@@ -16,45 +26,16 @@ function App() {
         </h1>
      </div>
      <div className='app__vidoes'>
-      {/*app videos*/}
+      {reels.map(({channel, avatarSrc, song, url, likes, shares}) => (
       <VideoCard 
-      channel='skhuraman'
-      avatarSrc={"instareel/public/logo512.png"}
-      song='skhuraman - WAR'
-      url={'https://joy1.videvo.net/videvo_files/video/free/2019-11/large_watermarked/190301_1_25_11_preview.mp4'}
-      likes={255}
-      shares={90}
+      channel={channel}
+      avatarSrc={avatarSrc}
+      song={song}
+      url={url}
+      likes={likes}
+      shares={shares}
       />
-      <VideoCard
-      channel='skhuraman'
-      avatarSrc={""}
-      song='skhuraman - WAR'
-      url={'https://joy.videvo.net/videvo_files/video/premium/partners0260/small_watermarked/BB_59a8761a-3f92-4d52-80b0-0cad4129725d_preview.webm'}
-      likes={255}
-      shares={90}
-      />
-      <VideoCard
-      channel='skhuraman'
-      avatarSrc={""}
-      song='skhuraman - WAR'
-      url={'https://joy1.videvo.net/videvo_files/video/free/2014-12/large_watermarked/Raindrops_Videvo_preview.mp4'}
-      likes={255}
-      shares={90}
-      /><VideoCard
-      channel='skhuraman'
-      avatarSrc={""}
-      song='skhuraman - WAR'
-      url={'https://cdn.videvo.net/videvo_files/video/premium/video0035/small_watermarked/barb_new08_preview.webm'}
-      likes={255}
-      shares={90}
-      /><VideoCard
-      channel='skhuraman'
-      avatarSrc={""}
-      song='skhuraman - WAR'
-      url={'https://joy1.videvo.net/videvo_files/video/free/2020-04/large_watermarked/200314%20_Work%20Life_02_%204k_058_preview.mp4'}
-      likes={255}
-      shares={90}
-      />
+      ))}
       
      </div>
 
